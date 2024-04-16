@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+function esNumero(valor) {
+    return !isNaN(valor) && isFinite(valor);
+}
+
+
+var numero1 = prompt("Introduce el primer número:");
+var numero2 = prompt("Introduce el segundo número:");
+var operacion = prompt("Introduce la operación a realizar (+, -, *, /):");
+
+
+if (esNumero(numero1) && esNumero(numero2)) {
+   
+    numero1 = parseFloat(numero1);
+    numero2 = parseFloat(numero2);
+
+    
+    switch (operacion) {
+        case "+":
+            alert("El resultado de la suma es: " + (numero1 + numero2));
+            break;
+        case "-":
+            alert("El resultado de la resta es: " + (numero1 - numero2));
+            break;
+        case "*":
+            alert("El resultado de la multiplicación es: " + (numero1 * numero2));
+            break;
+        case "/":
+            alert("El resultado de la división es: " + (numero1 / numero2));
+            break;
+        default:
+            alert("Operación incorrecta");
+            break;
+    }
+} else {
+    
+    alert("Por favor, introduce dos números válidos.");
+}
+
+    </script>
+</body>
+</html>

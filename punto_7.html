@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Función para validar si un valor es un número
+function esNumero(valor) {
+    return !isNaN(valor) && isFinite(valor);
+}
+
+// Función para calcular la media de las notas
+function calcularMedia(notas) {
+    var suma = 0;
+    for (var i = 0; i < notas.length; i++) {
+        suma += notas[i];
+    }
+    return suma / notas.length;
+}
+
+// Función para determinar si un estudiante está aprobado o reprobado
+function verificarAprobacion(media) {
+    if (media >= 3) {
+        return "Aprobado";
+    } else {
+        return "Reprobado";
+    }
+}
+
+// Array para almacenar las notas
+var notas = [];
+
+// Solicitar al usuario que introduzca tres notas y validarlas
+for (var i = 0; i < 3; i++) {
+    var nota;
+    do {
+        nota = prompt("Introduce la nota " + (i + 1) + ":");
+    } while (!esNumero(nota));
+    notas.push(parseFloat(nota));
+}
+
+// Calcular la media de las notas
+var media = calcularMedia(notas);
+
+// Determinar si el estudiante está aprobado o reprobado
+var estado = verificarAprobacion(media);
+
+// Mostrar el resultado
+alert("La nota media es: " + media.toFixed(2) + ". El estudiante está " + estado + ".");
+
+
+    </script>
+</body>
+</html>
